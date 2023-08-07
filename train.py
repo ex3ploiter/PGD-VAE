@@ -127,7 +127,7 @@ if args.train == "True":
             optimizer.step()
     
 
-        if (epoch + 1) % 50 == 0:
+        if (epoch + 1) % 10 == 0:
             torch.save({
                         'model_state_dict': model.state_dict(),
                         'optimizer_state_dict': optimizer.state_dict(),
