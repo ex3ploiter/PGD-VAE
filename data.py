@@ -106,7 +106,7 @@ class Graph_sequence_sampler_pytorch(torch.utils.data.Dataset):
         self.adj_all = []
         self.len_all = []
         for G in G_list:
-            self.adj_all.append(np.asarray(nx.to_numpy_array(G)))
+            self.adj_all.append(np.asarray(nx.to_numpy_matrix(G)))
             self.len_all.append(G.number_of_nodes())
         if max_num_node is None:
             self.n = max(self.len_all)
