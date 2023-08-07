@@ -184,7 +184,7 @@ class Make_batch_data:
     def makeAdj(self, graphs, num_pad):
         adj = torch.zeros(len(graphs), num_pad, num_pad)
         for i in range(len(graphs)):
-            graph_tmp = torch.from_numpy(nx.to_numpy_matrix(graphs[i]))
+            graph_tmp = torch.from_numpy(nx.to_numpy_array(graphs[i]))
             adj[i, :, :] = F.pad(graph_tmp, (0, num_pad - graph_tmp.shape[1], 0, num_pad - graph_tmp.shape[0]), "constant", 0)
         
         return adj
